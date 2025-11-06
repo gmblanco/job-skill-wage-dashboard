@@ -35,3 +35,33 @@ Este proyecto es una aplicación web para visualizar tendencias del mercado labo
 - Preparar la documentación del proyecto.
 - Finalizar el repositorio y el despliegue.
 
+# Datasets
+## 📊 Dataset 1 — Empleo por sector (Eurostat `lfsa_egan2`)
+
+**Fuente:** [Eurostat – Employed persons by sex, age and economic activity (NACE Rev.2)](https://ec.europa.eu/eurostat/databrowser/view/lfsa_egan2/default/table?lang=en)
+
+**Descripción:**  
+Datos anuales del número de personas empleadas en **España** por **sector económico (clasificación NACE Rev.2)**, para la población de **15 a 64 años**.  
+Las cifras están expresadas en **miles de personas**.
+
+**Cobertura temporal:** 2008–2024  
+**Unidad:** Miles de personas  
+
+**Variables:**
+| Columna | Descripción |
+|----------|--------------|
+| `sector` | Código NACE del sector económico (A, B–E, F, G–I, J, etc.) |
+| `country` | País (`Spain`) |
+| `year` | Año |
+| `age_group` | Grupo de edad (15–64 años) |
+| `employment_thousands` | Personas empleadas (miles) |
+
+**Limpieza y formato:**
+- Filtrado: España (`geo = ES`), total (`sex = T`), edad 15–64 años.  
+- Eliminadas columnas de metadatos.  
+- Renombradas columnas en formato `snake_case`.  
+- Guardado como `employment_spain_by_sector.csv` en `/data/processed/`.
+
+**Uso en la aplicación:**  
+Gráficos de evolución y comparación del empleo por sector (series temporales, barras, áreas).
+
