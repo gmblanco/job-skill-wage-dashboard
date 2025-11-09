@@ -65,3 +65,64 @@ Las cifras están expresadas en **miles de personas**.
 **Uso en la aplicación:**  
 Gráficos de evolución y comparación del empleo por sector (series temporales, barras, áreas).
 
+## 📊 Dataset 2 — Vacantes por sector (Eurostat `jvs_q_nace2`)
+
+**Fuente:** [Eurostat – Job vacancies by NACE Rev.2 activity](https://ec.europa.eu/eurostat/databrowser/view/jvs_q_nace2/default/table?lang=en)
+
+**Descripción:**  
+Contiene la **tasa de vacantes** en España por **sector económico (clasificación NACE Rev.2)**.  
+Los datos son **trimestrales** y expresan el porcentaje de puestos de trabajo no cubiertos sobre el total de empleos.  
+Permite analizar la **demanda laboral** y las diferencias entre sectores.
+
+**Cobertura temporal:** 2015Q1–2025Q2  
+**Unidad:** % del total de puestos  
+
+**Variables:**
+| Columna | Descripción |
+|----------|--------------|
+| `sector` | Código NACE Rev.2 del sector económico |
+| `country` | País (`Spain`) |
+| `period` | Trimestre (formato `YYYYQn`) |
+| `vacancy_rate` | Tasa de vacantes (%) |
+
+**Limpieza y formato:**
+- Filtrado: España (`geo = ES`), `NSA` (datos sin ajustar), indicador `Job vacancy rate (%)`.  
+- Eliminadas columnas de metadatos.  
+- Renombradas columnas en formato `snake_case`.  
+- Guardado como `vacancies_spain_by_sector.csv` en `/data/processed/`.
+
+**Uso en la aplicación:**  
+Gráficos de evolución y comparación de la **demanda laboral por sector**, y cruces con el empleo total (Dataset 1).
+
+---
+
+## 💼 Dataset 3 — Ofertas de empleo y habilidades (LinkedIn Job Postings 2023–2024)
+
+**Fuente:** [Kaggle – LinkedIn Job Postings (2023 – 2024)](https://www.kaggle.com/datasets/arshkoneru/linkedin-job-postings-2023-2024)
+
+**Descripción:**  
+Dataset con más de **120 000 ofertas de empleo publicadas en LinkedIn** durante 2023 y 2024.  
+Incluye información sobre **puestos, ubicación, experiencia, salario y habilidades requeridas**.  
+Permite identificar las **habilidades más demandadas** y los **perfiles profesionales en auge**.
+
+**Cobertura temporal:** 2023–2024  
+**Unidad:** Ofertas de empleo  
+
+**Variables seleccionadas:**
+| Columna | Descripción |
+|----------|--------------|
+| `title` | Título del puesto |
+| `skills_desc` | Habilidades o competencias requeridas |
+| `location` | Ubicación del empleo |
+| `formatted_experience_level` | Nivel de experiencia (entry, associate, senior...) |
+| `med_salary` | Salario medio estimado |
+| `listed_time` | Fecha de publicación de la oferta |
+
+**Limpieza y formato:**
+- Descargado el archivo `job_postings.csv`.  
+- Filtrado por columnas relevantes.  
+- Eliminadas filas sin habilidades o ubicación.  
+- Guardado como `linkedin_job_postings_skills.csv` en `/data/processed/`.
+
+**Uso en la aplicación:**  
+Visualizaciones sobre **habilidades más demandadas**, **evolución temporal de la demanda**, y **relación entre competencias y salario**.
