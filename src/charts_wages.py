@@ -131,7 +131,7 @@ def heatmap_top_states(df: pd.DataFrame, occupation: str, top_n: int = 5):
 
     fig = px.imshow(
         mat,
-        labels=dict(color="Salario anual mediano ($)"),
+        labels=dict(color="Salario anual medio ($)"),
         color_continuous_scale="Viridis",
         aspect="auto",
     )
