@@ -1,5 +1,8 @@
 # Aplicación de tendencias en empleo y mercado laboral
 
+### Link to the project
+Link: https://job-skill-wage-dashboard.onrender.com/Wage_Maps_and_Trends
+
 ## Breve descripción
 Este proyecto es una aplicación web para visualizar tendencias del mercado laboral y del empleo. Proporciona un cuadro de mando interactivo que permite identificar los sectores que más crecen y las habilidades más demandadas. El objetivo es ayudar a estudiantes, profesionales, universidades e instituciones a tomar mejores decisiones sobre educación, formación y desarrollo profesional.
 
