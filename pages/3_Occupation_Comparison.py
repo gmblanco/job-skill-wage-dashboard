@@ -27,7 +27,7 @@ def get_data():
 
 
 def main():
-    st.title("Comparador de Ocupaciones (Radar)")
+    st.title("Comparador de Ocupaciones por habilidades")
 
     oews_clean, merged, df_plot, df_rec, occ, skills_clean, tasks_clean = get_data()
 
@@ -35,7 +35,7 @@ def main():
     selected = st.multiselect(
         "Selecciona hasta 3 ocupaciones",
         occ_list,
-        default=["Software Developers", "Registered Nurses"][: min(2, len(occ_list))],
+        default=["Software Developers", "Information Security Analysts"][: min(2, len(occ_list))],
     )
 
     if len(selected) == 0:
